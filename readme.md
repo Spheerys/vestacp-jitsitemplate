@@ -24,22 +24,19 @@ Install apt-transport-https
 
 `sudo apt-get install apt-transport-https`
 
-Activate proxy_http module on apache (if not already set)
+Activate somes modules on apache
 
-`a2enmod proxy_http`
+`a2enmod proxy_http headers`
 
-Activate headers module on apache (if not already set)
-
-`a2enmod headers`
 
 Create generic folders of nginx
 
-`cd /etc/nginx`  
+`cd /etc/nginx`
 `sudo mkdir sites-available && sudo mkdir sites-enabled`
 
 Create the generic files for the Jitsi's domain
 
-`sudo touch /etc/nginx/sites-available/<jitsi_domain>.conf`  
+`sudo touch /etc/nginx/sites-available/<jitsi_domain>.conf`
 `sudo ln -s /etc/nginx/sites-available/<jitsi_domain>.conf /etc/nginx/sites-enabled/<jitsi_domain>.conf`
 
 Enter to web templates folder
@@ -87,7 +84,7 @@ NAT configuration (Only if necessary)
 
 Add the lines
 
-`org.ice4j.ice.harvest.NAT_HARVESTER_LOCAL_ADDRESS=<Local.IP.Address>`  
+`org.ice4j.ice.harvest.NAT_HARVESTER_LOCAL_ADDRESS=<Local.IP.Address>`
 `org.ice4j.ice.harvest.NAT_HARVESTER_PUBLIC_ADDRESS=<Public.IP.Address>`
 
 Change the template on Jitsi's domain to Jitsi in VestaCP (apache2 and nginx)
